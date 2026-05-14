@@ -1,15 +1,22 @@
-# websit...
-<!DOCTYPE html>
+
+
+    
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ABJ Local Shop</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -18,7 +25,7 @@
     }
 
     body{
-      background:#f8f8f8;
+      background:#f7f7f7;
       color:#222;
       overflow-x:hidden;
     }
@@ -28,16 +35,17 @@
     }
 
     /* HERO */
+
     .hero{
-      height:100vh;
       width:100%;
+      height:100vh;
       background:url('https://share.google/UI4sCuwIv6VU8nU3K') center/cover no-repeat;
       position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      color:white;
+      padding:20px;
     }
 
     .hero::before{
@@ -50,75 +58,77 @@
     .hero-content{
       position:relative;
       z-index:2;
-      padding:20px;
+      color:#fff;
+      max-width:700px;
     }
 
-    .hero h1{
-      font-size:3rem;
+    .hero-content h1{
+      font-size:60px;
       margin-bottom:15px;
       font-weight:700;
     }
 
-    .hero p{
-      font-size:1.2rem;
-      margin-bottom:25px;
+    .hero-content p{
+      font-size:20px;
+      margin-bottom:30px;
     }
 
-    .btn{
+    .hero-btn{
       display:inline-block;
-      padding:14px 30px;
+      padding:15px 35px;
       background:#ff9800;
-      color:white;
-      text-decoration:none;
+      color:#fff;
       border-radius:50px;
+      text-decoration:none;
       font-weight:600;
       transition:0.3s;
     }
 
-    .btn:hover{
-      background:#e68900;
-      transform:translateY(-2px);
+    .hero-btn:hover{
+      background:#ff7b00;
+      transform:translateY(-3px);
     }
 
     /* SECTION */
+
     section{
-      padding:60px 20px;
+      padding:70px 20px;
     }
 
     .section-title{
       text-align:center;
-      font-size:2rem;
-      margin-bottom:35px;
+      font-size:38px;
+      margin-bottom:40px;
       font-weight:700;
     }
 
     /* PRODUCT CAROUSEL */
+
+    .carousel-container{
+      overflow:hidden;
+      position:relative;
+    }
+
     .carousel{
       display:flex;
       gap:20px;
       overflow-x:auto;
-      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
       padding-bottom:10px;
     }
 
     .carousel::-webkit-scrollbar{
-      height:8px;
-    }
-
-    .carousel::-webkit-scrollbar-thumb{
-      background:#ccc;
-      border-radius:10px;
+      display:none;
     }
 
     .product-card{
-      min-width:280px;
-      max-width:280px;
-      background:white;
+      min-width:300px;
+      background:#fff;
       border-radius:20px;
       overflow:hidden;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
-      scroll-snap-align:start;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
       transition:0.3s;
+      flex-shrink:0;
     }
 
     .product-card:hover{
@@ -127,48 +137,52 @@
 
     .product-card img{
       width:100%;
-      height:220px;
+      height:240px;
       object-fit:cover;
     }
 
-    .product-info{
-      padding:18px;
+    .product-content{
+      padding:20px;
     }
 
-    .product-info h3{
-      font-size:1.2rem;
+    .product-content h3{
+      font-size:22px;
       margin-bottom:10px;
     }
 
-    .product-info p{
-      font-size:0.95rem;
+    .product-content p{
+      font-size:15px;
       color:#666;
-      margin-bottom:15px;
+      margin-bottom:20px;
+      line-height:1.6;
     }
 
-    .product-info button{
+    .product-content button{
       width:100%;
-      padding:12px;
+      padding:14px;
       border:none;
       background:#111;
-      color:white;
-      border-radius:10px;
-      cursor:pointer;
+      color:#fff;
+      border-radius:12px;
+      font-size:16px;
       font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    .product-info button:hover{
+    .product-content button:hover{
       background:#ff9800;
     }
 
-    /* CART FORM */
-    .order-section{
-      background:white;
-      border-radius:20px;
-      padding:30px;
+    /* ORDER FORM */
+
+    .order-wrapper{
       max-width:700px;
       margin:auto;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      background:#fff;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
     }
 
     .form-group{
@@ -187,47 +201,54 @@
       padding:14px;
       border:1px solid #ddd;
       border-radius:12px;
+      font-size:15px;
       outline:none;
-      font-size:1rem;
     }
 
-    .cart-items{
-      margin:20px 0;
+    .cart-box{
       background:#f3f3f3;
-      padding:15px;
-      border-radius:12px;
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:20px;
     }
 
-    .cart-items ul{
-      padding-left:20px;
+    .cart-box h4{
+      margin-bottom:10px;
+    }
+
+    #cartItems li{
+      margin-bottom:8px;
     }
 
     .submit-btn{
       width:100%;
-      padding:15px;
+      padding:16px;
       border:none;
       background:#ff9800;
-      color:white;
-      font-size:1rem;
+      color:#fff;
+      font-size:17px;
       border-radius:12px;
       cursor:pointer;
       font-weight:600;
+      transition:0.3s;
     }
 
     .submit-btn:hover{
-      background:#e68900;
+      background:#ff7b00;
     }
 
     /* FOOTER */
+
     footer{
+      background:#111;
+      color:#fff;
       text-align:center;
       padding:25px;
-      background:#111;
-      color:white;
       margin-top:40px;
     }
 
-    /* WHATSAPP */
+    /* WHATSAPP BUTTON */
+
     .whatsapp-btn{
       position:fixed;
       right:20px;
@@ -235,136 +256,192 @@
       width:60px;
       height:60px;
       background:#25D366;
+      color:#fff;
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
+      font-size:28px;
       text-decoration:none;
-      color:white;
-      font-size:30px;
       box-shadow:0 5px 15px rgba(0,0,0,0.3);
       z-index:999;
     }
 
     @media(max-width:768px){
-      .hero h1{
-        font-size:2.2rem;
+
+      .hero-content h1{
+        font-size:42px;
       }
 
-      .hero p{
-        font-size:1rem;
+      .hero-content p{
+        font-size:17px;
       }
+
+      .section-title{
+        font-size:30px;
+      }
+
+      .product-card{
+        min-width:85%;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
+
   <section class="hero">
+
     <div class="hero-content">
+
       <h1>ABJ Local Shop</h1>
+
       <p>Fresh Finds, Best Prices</p>
 
-      <a href="#products" class="btn">
+      <a href="#products" class="hero-btn">
         Shop Now
       </a>
+
     </div>
+
   </section>
 
   <!-- PRODUCTS -->
+
   <section id="products">
-    <h2 class="section-title">Our Products</h2>
 
-    <div class="carousel">
+    <h2 class="section-title">
+      Our Products
+    </h2>
 
-      <div class="product-card">
-        <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
+    <div class="carousel-container">
 
-        <div class="product-info">
-          <h3>Premium Product</h3>
+      <div class="carousel" id="carousel">
 
-          <p>
-            High-quality local product with affordable pricing and excellent freshness.
-          </p>
+        <!-- PRODUCT 1 -->
 
-          <button onclick="addToCart('Premium Product')">
-            Add To Cart
-          </button>
+        <div class="product-card">
+
+          <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
+
+          <div class="product-content">
+
+            <h3>Fresh Grocery Pack</h3>
+
+            <p>
+              Premium quality grocery items with best pricing and trusted freshness.
+            </p>
+
+            <button onclick="addToCart('Fresh Grocery Pack')">
+              Add To Cart
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
-      <div class="product-card">
-        <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
+        <!-- PRODUCT 2 -->
 
-        <div class="product-info">
-          <h3>Daily Essentials</h3>
+        <div class="product-card">
 
-          <p>
-            Best quality grocery essentials for your everyday needs.
-          </p>
+          <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
 
-          <button onclick="addToCart('Daily Essentials')">
-            Add To Cart
-          </button>
+          <div class="product-content">
+
+            <h3>Daily Essentials</h3>
+
+            <p>
+              Everyday local shop products available at affordable rates.
+            </p>
+
+            <button onclick="addToCart('Daily Essentials')">
+              Add To Cart
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
-      <div class="product-card">
-        <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
+        <!-- PRODUCT 3 -->
 
-        <div class="product-info">
-          <h3>Fresh Collection</h3>
+        <div class="product-card">
 
-          <p>
-            Carefully selected products with trusted quality and value.
-          </p>
+          <img src="https://i.ibb.co/VWFmZDtc/IMG-20260508-WA0018.jpg" alt="Product">
 
-          <button onclick="addToCart('Fresh Collection')">
-            Add To Cart
-          </button>
+          <div class="product-content">
+
+            <h3>Special Combo</h3>
+
+            <p>
+              High-quality combo products carefully selected for customers.
+            </p>
+
+            <button onclick="addToCart('Special Combo')">
+              Add To Cart
+            </button>
+
+          </div>
+
         </div>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- ORDER FORM -->
-  <section>
-    <h2 class="section-title">Place Your Order</h2>
 
-    <div class="order-section">
+  <section>
+
+    <h2 class="section-title">
+      Place Your Order
+    </h2>
+
+    <div class="order-wrapper">
 
       <form id="orderForm">
 
         <div class="form-group">
+
           <label>Customer Name</label>
 
           <input 
-            type="text" 
+            type="text"
             id="customerName"
             placeholder="Enter your name"
             required
-          />
+          >
+
         </div>
 
         <div class="form-group">
+
           <label>Phone Number</label>
 
           <input 
-            type="tel" 
+            type="tel"
             id="customerPhone"
-            placeholder="Enter phone number"
+            placeholder="Enter your phone number"
             required
-          />
+          >
+
         </div>
 
-        <div class="cart-items">
-          <h3>Cart Items</h3>
+        <div class="cart-box">
 
-          <ul id="cartList">
+          <h4>Cart Items</h4>
+
+          <ul id="cartItems">
+
             <li>No items added</li>
+
           </ul>
+
         </div>
 
         <button type="submit" class="submit-btn">
@@ -374,57 +451,107 @@
       </form>
 
     </div>
+
   </section>
 
   <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 ABJ Local Shop | All Rights Reserved</p>
+
+    <p>
+      © 2026 ABJ Local Shop | All Rights Reserved
+    </p>
+
   </footer>
 
-  <!-- WHATSAPP BUTTON -->
+  <!-- WHATSAPP -->
+
   <a 
-    href="https://wa.me/8969242471"
+    href="https://wa.me/918969242471"
     class="whatsapp-btn"
     target="_blank"
   >
-    💬
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- EMAILJS -->
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <script>
+
     // EMAILJS INIT
+    // Replace with your EmailJS Public Key
+
     emailjs.init("YOUR_PUBLIC_KEY");
 
-    const cart = [];
+    // CART
+
+    let cart = [];
 
     function addToCart(product){
+
       cart.push(product);
 
       updateCart();
 
       alert(product + " added to cart!");
+
     }
 
     function updateCart(){
-      const cartList = document.getElementById("cartList");
 
-      cartList.innerHTML = "";
+      const cartItems = document.getElementById("cartItems");
+
+      cartItems.innerHTML = "";
 
       if(cart.length === 0){
-        cartList.innerHTML = "<li>No items added</li>";
+
+        cartItems.innerHTML = "<li>No items added</li>";
+
         return;
+
       }
 
       cart.forEach(item => {
-        const li = document.createElement("li");
+
+        let li = document.createElement("li");
+
         li.textContent = item;
-        cartList.appendChild(li);
+
+        cartItems.appendChild(li);
+
       });
+
     }
 
-    // FORM SUBMIT
+    // AUTO SLIDE
+
+    const carousel = document.getElementById("carousel");
+
+    let scrollAmount = 0;
+
+    setInterval(() => {
+
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth){
+
+        scrollAmount = 0;
+
+      } else {
+
+        scrollAmount += 320;
+
+      }
+
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+
+    }, 3000);
+
+    // SEND ORDER
+
     document
       .getElementById("orderForm")
       .addEventListener("submit", function(e){
@@ -437,11 +564,24 @@
       const customerPhone =
         document.getElementById("customerPhone").value;
 
+      if(cart.length === 0){
+
+        alert("Please add products to cart!");
+
+        return;
+
+      }
+
       const templateParams = {
+
         customer_name: customerName,
+
         customer_phone: customerPhone,
+
         order_items: cart.join(", "),
+
         owner_email: "ashuu7461@gmail.com"
+
       };
 
       emailjs.send(
@@ -449,23 +589,29 @@
         "YOUR_TEMPLATE_ID",
         templateParams
       )
-      .then(function(response){
+
+      .then(function(){
 
         alert("Order Sent Successfully!");
 
         document.getElementById("orderForm").reset();
 
-        cart.length = 0;
+        cart = [];
 
         updateCart();
 
-      }, function(error){
+      })
 
-        alert("Failed to send order!");
+      .catch(function(error){
+
+        alert("Failed To Send Order!");
+
+        console.log(error);
 
       });
 
     });
+
   </script>
 
 </body>
